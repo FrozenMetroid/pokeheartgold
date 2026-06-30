@@ -1,4 +1,5 @@
 #include "constants/scrcmd.h"
+#include "constants/pokemon.h"
 #include "fielddata/script/scr_seq/event_R29.h"
 #include "msgdata/msg/msg_0373_R29.h"
 	.include "asm/macros/script.inc"

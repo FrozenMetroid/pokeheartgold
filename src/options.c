@@ -5,6 +5,8 @@
 #include "player_data.h"
 #include "system.h"
 
+#include "constants/options.h"
+
 Options *Options_New(enum HeapID heapID) {
     Options *ret = Heap_Alloc(heapID, sizeof(Options));
     Options_Init(ret);
@@ -18,7 +20,7 @@ void Options_Copy(Options *src, Options *dest) {
 void Options_Init(Options *options) {
     MI_CpuClear8(options, sizeof(Options));
 
-    options->textSpeed = 1;   // mid speed
+    options->textSpeed = OPTIONS_TEXT_SPEED_FAST;
     options->soundMethod = 0; // stereo
     options->battleStyle = 0; // shift
     options->battleScene = 0; // on

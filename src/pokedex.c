@@ -5,6 +5,7 @@
 #include "constants/johto_dex.h"
 #include "constants/species.h"
 
+#include "debug.h"
 #include "pokemon.h"
 #include "unk_02091278.h"
 

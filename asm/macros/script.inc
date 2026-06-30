@@ -4767,6 +4767,13 @@
 	.byte \arg1
 	.endm
 
+	.macro RegisterSeenPokemonFormGender species, form, gender
+	.short 853
+	.short \species
+	.short \form
+	.short \gender
+	.endm
+
 	; Script headers
 
 	.macro MapScript kind, script

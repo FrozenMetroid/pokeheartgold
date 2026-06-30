@@ -8,6 +8,7 @@
 #include "graphic/zukan_gra.naix"
 #include "msgdata/msg.naix"
 
+#include "debug.h"
 #include "dex_mon_measures.h"
 #include "gf_gfx_loader.h"
 #include "pokedex_util.h"

@@ -19,6 +19,7 @@
 #include "certificates_app.h"
 #include "choose_starter.h"
 #include "daycare.h"
+#include "debug.h"
 #include "easy_chat.h"
 #include "encounter.h"
 #include "fashion_case.h"
@@ -5435,5 +5436,20 @@ BOOL ScrCmd_837(ScriptContext *ctx) {
     } else {
         *p_ret = FALSE;
     }
+    return FALSE;
+}
+
+BOOL ScrCmd_RegisterSeenPokemonFormGender(ScriptContext *ctx) {
+
+    u16 species = ScriptReadHalfword(ctx);
+    u16 form = ScriptReadHalfword(ctx);
+    u16 gender = ScriptReadHalfword(ctx);
+
+    Pokedex *pokedex = Save_Pokedex_Get(ctx->fieldSystem->saveData);
+    Pokemon *mon = AllocMonZeroed(HEAP_ID_FIELD1);
+    CreateMonWithGenderNatureLetter(mon, species, 5, TRUE, gender, 0, 0);
+    SetMonData(mon, MON_DATA_FORM, &form);
+    Pokedex_SetMonSeenFlag(pokedex, mon);
+    Heap_Free(mon);
     return FALSE;
 }

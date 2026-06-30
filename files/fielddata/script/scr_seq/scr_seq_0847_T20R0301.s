@@ -9,6 +9,8 @@
 	ScrDefEnd
 
 scr_seq_T20R0301_000:
+	RegisterSeenPokemonFormGender SPECIES_PIKACHU, 0, MON_MALE
+	RegisterSeenPokemonFormGender SPECIES_PIKACHU, 0, MON_FEMALE
 	SimpleNPCMsg msg_0547_T20R0301_00000
 	End
 	.balign 4, 0
